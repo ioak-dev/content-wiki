@@ -20,11 +20,39 @@ h1, h2, h3, h4 {
     font-family: 'Roboto', sans-serif;
 }
 
-#header {
+/* #header .logo {
     padding: 10px;
     background-color: #2A2E45;
-    color: white;
+    width: 50%;
+    display: flex;
     text-align: right;
+    align-content: right;
+} */
+
+#header {
+    background-color: #2A2E45;  
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 9fr;
+    color: white;
+}
+
+#header .nav a {
+    color: #959596;
+    padding-left: 20px;
+}
+#header .nav a.selected {
+    color: white;
+    font-weight: bold;
+}
+
+#header .nav-list {
+    list-style: none;
+    display: flex;
+    margin: 0px;
+    padding: 10px;
+    text-decoration: none;
+    color: white;
 }
 
 #cover {
