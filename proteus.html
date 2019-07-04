@@ -21,27 +21,19 @@
             </div>
             <div id="content">
                 <div id="main">
-                    <h1>Proteus -  JSON Transformation using Templates in Java</h1>
-                    <p>It has never been so easy to do Json transformation in Java. Proteus is a library that can be used to transform a JSON data from one structure to another, using defined templates. It can be added to any existing java project with no effort.</p>
+                    <h1>Proteus</h1>
+                    <h2>JSON Transformation using Templates in Java</h2>
+                    <paragraph>It has never been so easy to do Json transformation in Java. Proteus is a library that can be used to transform a JSON data from one structure to another, using defined templates. It can be added to any existing java project with no effort.</paragraph>
                     <h2>Getting Started</h2>
                     <ul><li>Get an instance of proteus client and start transforming JSONs</li></ul>
-                    <div class="snippet">
-                            <p>
-                                // get an instance of proteus
-                                </br>                            
-                                ProteusClient proteus = ProteusClient.getInstance();
-                            </p>
-                            <p>
-                                // start executing commands on proteus client using one of several methods exposed
-                                </br>
-                                output_jsonobject = proteus.transform(input_jsonobject, template);
-                            </p>
-                            <p>
-                                List<output_jsonobject> = proteus.transform(List<input_jsonobject>, template);
-                                </br>
-                                output_jsonarray = proteus.transform(input_jsonarray, template);
-                            </p>
-                    </div>
+                    <snippet>
+                        // get an instance of proteus
+                        </br>ProteusClient proteus = ProteusClient.getInstance();
+                        </br></br>// start executing commands on proteus client using one of several methods exposed
+                        </br>output_jsonobject = proteus.transform(input_jsonobject, template);
+                        </br>List<output_jsonobject> = proteus.transform(List<input_jsonobject>, template);
+                        </br></br>output_jsonarray = proteus.transform(input_jsonarray, template);
+                    </snippet>
                     <ul><li>You can play with Example.java to see the transformation in action (for the included example Json input and templates)</li></ul>
                     
                     <h2>Features</h2>
@@ -54,22 +46,20 @@
                     </ul>
 
                     <h2>Template Definition Guide</h2>
-                    <div class="snippet">
-                        <p>
-                                {
-                                    "First Name": "First Name",
-                                    "Last Name": "Last Name",
-                                    "Address": {
-                                        "Street": "Address",
-                                        "City": "City",
-                                        "Country": "Country",
-                                        "District": "District"
-                                    },
-                                    "Rentals": "_asSet(Rentals.Film Title AS Film Title,Rentals.Payments AS Payments)"
-                                }
-                        </p>
-                    </div>
-                    <p>Defining a template is as simple as creating a plain json text/object containing the key mappings. Above is a sample template and the details are explained below</p>
+                    <snippet>
+                        {
+                            "First Name": "First Name",
+                            "Last Name": "Last Name",
+                            "Address": {
+                                "Street": "Address",
+                                "City": "City",
+                                "Country": "Country",
+                                "District": "District"
+                            },
+                            "Rentals": "_asSet(Rentals.Film Title AS Film Title,Rentals.Payments AS Payments)"
+                        }
+                    </snippet>
+                    <paragraph>Defining a template is as simple as creating a plain json text/object containing the key mappings. Above is a sample template and the details are explained below</paragraph>
                     <ul>
                         <li>Elements can be nested to any level</li>
                         <li>Actual values that will be substitued for a given key, is defined as the value. this key is the actual element in the input json to be transformed. Values in input json can be represented using dot for each lower level</li>
@@ -80,19 +70,19 @@
 
                     <h2>Download</h2>
                     <a href="https://github.com/ioak-dev/json-transform-api">Download from Github</a>
-                    <p>git clone https://github.com/codemyth/java-json-transform.git</p>
+                    <paragraph>git clone https://github.com/codemyth/java-json-transform.git</paragraph>
 
                     <h2>About the Codename</h2>
-                    <p>Proteus was a primordial deity in Greek mythology, protector of the seas, rivers and other bodies of water. He is versatile, mutable and capable of assuming many different forms. Because Proteus could assume whatever shape he pleased, he came to be regarded by some as a symbol of the original matter from which the world was created. The word protean, one meaning of which is “changeable in shape or form,” is derived from Proteus.</p>
+                    <paragraph>Proteus was a primordial deity in Greek mythology, protector of the seas, rivers and other bodies of water. He is versatile, mutable and capable of assuming many different forms. Because Proteus could assume whatever shape he pleased, he came to be regarded by some as a symbol of the original matter from which the world was created. The word protean, one meaning of which is “changeable in shape or form,” is derived from Proteus.</paragraph>
 
                     <h2>Licence and Terms</h2>
-                    <p>
+                    <paragraph>
                         This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
                         </br>
                         This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
                         </br>
                         You should have received a copy of the GNU General Public License along with this program. If not, see http://www.gnu.org/licenses/
-                    </p>
+                    </paragraph>
                 </div>
             </div>
             <div id="footer">
