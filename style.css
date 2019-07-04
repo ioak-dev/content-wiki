@@ -30,7 +30,10 @@ h1, h2, h3, h4 {
 } */
 
 #header {
-    background-color: #2A2E45;  
+    background-color: #2A2E45;
+    position:fixed;
+    width:980px;
+    overflow: hidden;
     padding: 10px;
     display: grid;
     grid-template-columns: 1fr 9fr;
@@ -56,7 +59,11 @@ h1, h2, h3, h4 {
 }
 
 #cover {
-    padding-top: 300px;
+    padding-top: 360px;
+}
+
+#cover-large {
+    padding-top: 560px;
 }
 
 #main {
