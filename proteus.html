@@ -3,16 +3,25 @@
         <title>IOAK - Proteus</title>
         <link rel="stylesheet" type="text/css" href="style.css">
         <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    <script src="app.js"></script>
     <body>
         <div id="container">
             <div id="header">
                 <div class="logo"><h1>IOAK</h1></div>
-                <div class="nav">
+                <div class="nav navbar">
                     <ul class="nav-list">
                         <li><a href="index.html">Home</a></li>
-                        <li><a class="selected" href="proteus.html">Proteus</a></li>
-                        <li><a href="ceres.html">Ceres</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a onClick="toggleNavProjects()" class="dropbtn selected">Projects&nbsp;<i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown-content" id="nav-projects">
+                                    <a href="proteus.html">Proteus</a>
+                                    <a href="ceres.html">Ceres</a>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </div>
