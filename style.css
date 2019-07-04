@@ -8,6 +8,10 @@ a {
     text-decoration: none;
 }
 
+#posts a {
+    color: red;
+}
+
 h1, h2, h3, h4 {
     margin: 0; 
 }
@@ -54,6 +58,10 @@ h1, h2, h3, h4 {
 
 #cover-large {
     padding-top: 560px;
+}
+
+#cover-small {
+    padding-top: 200px;
 }
 
 #main {
