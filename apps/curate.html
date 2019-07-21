@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <title>IOAK - Curate</title>
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="../app.js"></script>
+    <script>
+        markdown('curate_live.md');
+    </script>
+    <body>
+        <div id="container">
+            <div id="header">
+                <div class="logo"><h1>IOAK</h1></div>
+                <div class="nav navbar">
+                    <ul class="nav-list">
+                        <li><a href="../index.html">Home</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a onClick="toggleNavProjects()" class="dropbtn">Projects&nbsp;<i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown-content" id="nav-projects">
+                                    <a href="../projects/proteus.html">Proteus</a>
+                                    <a href="../projects/ceres.html">Ceres</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="dropdown">
+                                <a onClick="toggleNavApps()" class="dropbtn selected">Apps&nbsp;<i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown-content" id="nav-apps">
+                                    <a href="curate.html">Curate</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="../blog/index.html">Blog</a></li>
+                        <li><a href="../about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div id="cover" style="background-image: url('../projects/ceres.jpg');">
+            </div>
+            <div id="content">
+                <div id="main">
+                        <div id="markdown"></div>
+                </div>
+            </div>
+            <div id="footer">
+                Copyright &copy; 2019 ioak.org
+            </div>
+        </div>
+    </body>
+</html>
