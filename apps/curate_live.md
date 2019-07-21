@@ -160,10 +160,14 @@ POST
 * MongoDB production cloud account - production deployment
 * Local instance
 
-## 2.3 Restricted access to service API
+## 2.3 Service endpoints
+* Development/Test URL https://curate-service.herokuapp.com
+* Production URL https://curate-service.herokuapp.com
+
+## 2.4 Restricted access to service API
 * Protect the service layer with an API key based access mechanism
 * UX will send API key to get access to the API
 
-## 2.4 JWT based session management
+## 2.5 JWT based session management
 * Protect all endpoints with a request filter / interceptor
 * All endpoints (except the initial handshake endpoints) should be protected through JWT token based authorization header
