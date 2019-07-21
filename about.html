@@ -5,6 +5,8 @@
         <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto|Source+Code+Pro&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" integrity="sha256-LSUpTY0kkXGKvcBC9kbmgibmx3NVVgJvAEfTZbs51mU=" crossorigin="anonymous"></script>
     <script src="app.js"></script>
     <body>
         <div id="container">
@@ -22,8 +24,16 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="blog/index.html">Blog</a></li>
-                        <li><a class="selected" href="about.html">About</a></li>
+                        <li>
+                            <div class="dropdown">
+                                <a onClick="toggleNavApps()" class="dropbtn">Apps&nbsp;<i class="fa fa-caret-down"></i></a>
+                                <div class="dropdown-content" id="nav-apps">
+                                    <a href="apps/curate.html">Curate</a>
+                                </div>
+                            </div>
+                        </li>
+                        <!-- <li><a href="blog/index.html">Blog</a></li> -->
+                        <!-- <li><a class="selected" href="about.html">About</a></li> -->
                     </ul>
                 </div>
             </div>
