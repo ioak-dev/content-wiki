@@ -1,36 +1,36 @@
-+ 1. System flow
-++ 1.1 User Authentication Model
-+++ 1.1.1 Pre sign up
+# 1. System flow
+## 1.1 User Authentication Model
+### 1.1.1 Pre sign up
 
 /user/keys
 GET
 
-++++ Authorization header
+#### Authorization header
 none
 
-++++ Payload
+#### Payload
 none
 
-++++ Process
+#### Process
 * SALT: generate 20 char KEY using the best available random generator with (uppercase, lowercase, numeric, special characters)
 * SOLUTION: generate a random series of 50 char text
 
-++++ Persistence
+#### Persistence
 * none
 
-++++ Response
+#### Response
 * 200
  * salt
  * solution
 
-+++ 1.1.2 Sign up
+### 1.1.2 Sign up
 /user/signup
 POST
 
-++++ Authorization header
+#### Authorization header
 * none
 
-++++ Payload
+#### Payload
 * name
 * firstname
 * lastname
@@ -39,19 +39,19 @@ POST
 * solution
 * salt
 
-++++ Process
+#### Process
 * none
 
-++++ Persistence
+#### Persistence
 * id (auto generated)
 * all fields from payload
 
-++++ Response
+#### Response
 * 201 - If successfully created
 * 400 - Issue with payload
 * 500 - Any unknown error
 
-++++ User Interaction flow
+#### User Interaction flow
 * User interface
  * name
  * firstname
@@ -68,44 +68,44 @@ POST
  * 400/500
   * Error creating user. Try again and if you face issues again send us an email
 
-+++ 1.1.3 Pre sign in
+### 1.1.3 Pre sign in
 /user/keys/{name}
 GET
 
-++++ Authorization header
+#### Authorization header
 * none
 
-++++ Payload
+#### Payload
 * none
 
-++++ Process
+#### Process
 * get salt and problem from database for the given user
 
-++++ Persistence
+#### Persistence
 * none
 
-++++ Response
+#### Response
 * 200 - if user name is present
  * salt
  * problem
 * 404 - if user name is not present
 
-+++ 1.1.4 Sign in
+### 1.1.4 Sign in
 /user/signin
 POST
 
-++++ Authorization header
+#### Authorization header
 * none
 
-++++ Payload
+#### Payload
 * name
 * solution
 
-++++ Process
+#### Process
 * find if solution from payload matches with solution from database for the given user
 * If matches, generate a JWT token with username inside it. Use the random secret from the static map list and note down the key to secret
 
-++++ Response
+#### Response
 * 401 - if solution does not match
 * 200 - solution matches
  * JWT token
@@ -113,7 +113,7 @@ POST
 * 500 - unknown error while processing (should never happen usually)
 * 404 - if user name is not present
 
-++++ User interaction flow
+#### User interaction flow
 * User interface
  * username
  * password
@@ -126,44 +126,44 @@ POST
  * 404 - User does not exist
  * 200 - Redirect to bookmarks route
 
-++++ Footnotes
-+++++ JWT secret generation logic
+#### Footnotes
+####+ JWT secret generation logic
 * Have a global static map variable in one application class
 * SEED KEYS: seed the map with randomly generated key and value (5 entries for now.. can be increased in future
 
-+++ 1.1.5 Delete
+### 1.1.5 Delete
 /user
 DELETE
 
-+++ 1.1.6 Update details / password
+### 1.1.6 Update details / password
 /user/update
 POST
 
-++++ Authorization header
+#### Authorization header
 * JWT token
 * token key
 
-++++ Payload
+#### Payload
 * only fields to be updated
 
-++++ Process
+#### Process
 * similar to signup
 
-+ 2 Environment and API Permissions
-++ 2.1 Web service configuration
+# 2 Environment and API Permissions
+## 2.1 Web service configuration
 * Maintain two versions of environment properties in spring boot properties
 * Production version will connect to production cloud mongo
 * Local version will connect to local or test cloud mongo
 
-++ 2.2 Database details
+## 2.2 Database details
 * MongoDB test cloud account - for development purpose
 * MongoDB production cloud account - production deployment
 * Local instance
 
-++ 2.3 Restricted access to service API
+## 2.3 Restricted access to service API
 * Protect the service layer with an API key based access mechanism
 * UX will send API key to get access to the API
 
-++ 2.4 JWT based session management
+## 2.4 JWT based session management
 * Protect all endpoints with a request filter / interceptor
 * All endpoints (except the initial handshake endpoints) should be protected through JWT token based authorization header

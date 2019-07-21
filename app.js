@@ -29,18 +29,13 @@ window.onclick = function(e) {
 function markdown(link) {
     document.addEventListener('readystatechange', event => {
         if (event.target.readyState === "interactive") {
-            readTextFile(link);
-            document.getElementById('markdown').innerHTML = link;
+            $.get(link, function(md) {
+                var html = new showdown.Converter().makeHtml(md);
+                document.getElementById('markdown').innerHTML = html;
+            }, 'text');
         }
         // if (event.target.readyState === "complete") {
         //     alert("Now external resources are loaded too, like css,src etc... ");
         // }
     });
-}
-
-function readTextFile(file)
-{
-    $.get(file, function(data) {
-        console.log(data);
-     }, 'text');
 }
