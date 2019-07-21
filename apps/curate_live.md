@@ -27,8 +27,8 @@ none
 #### Response
 
 * 200
-  * salt
-  * solution
+    * salt
+    * solution
 
 ### 1.1.2 Sign up
 
@@ -67,20 +67,20 @@ POST
 #### User Interaction flow
 
 * User interface
-  * name
-  * firstname
-  * lastname
-  * email
-  * password
+    * name
+    * firstname
+    * lastname
+    * email
+    * password
 * Component
-  * requests /user/keys (to get salt and solution)
-  * encrypts verificationCode using salt+password
-  * sends /user/signup
+    * requests /user/keys (to get salt and solution)
+    * encrypts verificationCode using salt+password
+    * sends /user/signup
 * Feedback to user
-  * 201 from /user/signup
-    * User created successfully
-  * 400/500
-    * Error creating user. Try again and if you face issues again send us an email
+    * 201 from /user/signup
+        * User created successfully
+    * 400/500
+        * Error creating user. Try again and if you face issues again send us an email
 
 ### 1.1.3 Pre sign in
 
@@ -106,8 +106,8 @@ GET
 #### Response
 
 * 200 - if user name is present
-  * salt
-  * problem
+    * salt
+    * problem
 * 404 - if user name is not present
 
 ### 1.1.4 Sign in
@@ -133,27 +133,25 @@ POST
 
 * 401 - if solution does not match
 * 200 - solution matches
-  * JWT token
-  * token key
+    * JWT token
+    * token key
 * 500 - unknown error while processing (should never happen usually)
 * 404 - if user name is not present
 
 #### User interaction flow
 
 * User interface
-
-  * username
-  * password
+    * username
+    * password
 
 * Component
-
-  * requests /user/keys/{name} (to get salt and problem)
-  * computes solution for the problem using salt+password
-  * sends /user/signin
+    * requests /user/keys/{name} (to get salt and problem)
+    * computes solution for the problem using salt+password
+    * sends /user/signin
 * Feedback to user
-  * 401 - Incorrect password
-  * 404 - User does not exist
-  * 200 - Redirect to bookmarks route
+    * 401 - Incorrect password
+    * 404 - User does not exist
+    * 200 - Redirect to bookmarks route
 
 #### Footnotes
 
